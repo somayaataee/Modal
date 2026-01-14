@@ -16,8 +16,15 @@ const OpenModal = function(){
 
 for(let i = 0; i< btnsOpenmodal.length; i++){
     btnsOpenmodal[i].addEventListener('click',OpenModal);
-
     btnsClosemodal.addEventListener('click',CloseModal);
     overlay.addEventListener('click',CloseModal )
-    
 }
+
+//close modal by escape button
+document.addEventListener('keydown',function(e){
+    console.log(e.key);
+
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+            CloseModal();
+    }
+});
