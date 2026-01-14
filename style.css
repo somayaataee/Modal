@@ -54,12 +54,13 @@ body{
     z-index: 10;
 
 }
-.overly{
+.ovarlay{
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     position: absolute;
-    backdrop-filter: calc(3px);
+    background-color: rgba(1, 1, 1, 0.3);
+    backdrop-filter: blur(3px);
     z-index: 5;
 }
