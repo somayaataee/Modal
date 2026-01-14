@@ -1,19 +1,23 @@
 const modal = document.querySelector(".modal");
-const ovarlay = document.querySelector(".ovarlay");
+const overlay = document.querySelector(".overlay");
 const btnsOpenmodal = document.querySelectorAll(".show-modal");
 const btnsClosemodal =document.querySelector(".close-modal");
+//close modal
+const CloseModal = function(){
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    }
 
-// console.log(btnsOpenmodal);
+//open Modal
+const OpenModal = function(){
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+    } 
 
 for(let i = 0; i< btnsOpenmodal.length; i++){
-    btnsOpenmodal[i].addEventListener('click',function(){
-        modal.classList.remove('hidden');
-        ovarlay.classList.remove('hidden');
-    });
-    btnsClosemodal.addEventListener('click',function(){
-        modal.classList.add('hidden');
-        ovarlay.classList.add('hidden');
-    });
-    
+    btnsOpenmodal[i].addEventListener('click',OpenModal);
+
+    btnsClosemodal.addEventListener('click',CloseModal);
+    overlay.addEventListener('click',CloseModal )
     
 }
